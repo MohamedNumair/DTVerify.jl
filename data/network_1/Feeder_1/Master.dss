@@ -1,0 +1,12 @@
+Clear
+Set DefaultBaseFreq=50
+New Circuit.ntw_1_fdr_1 BasekV=0.4 pu=1.00  MVASC3=1e12 MVASC1=1e12
+New Reactor.Grounding phases=1 bus1=sourcebus.4 bus2=sourcebus.0 R=0.0 X=1E-10
+Redirect standarized_linecodes.dss
+Redirect fdr1_Lines.dss
+Redirect fdr1_Loads.dss
+// Redirect fdr1_groundings.dss
+
+calcvoltagebases
+Buscoords network_1_BusCoords.txt
+solve

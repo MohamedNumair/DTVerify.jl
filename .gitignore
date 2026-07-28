@@ -1,0 +1,6 @@
+Manifest.toml
+*.jld2
+!data/zprim/*.jld2
+.DS_Store
+examples/output/
+examples/Manifest.toml
