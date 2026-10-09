@@ -109,9 +109,9 @@ The paper's cable and network data ship in [`data/`](data/README.md):
 
 - `data/network_1/Feeder_1/` - ENWL LV test Network 1, Feeder 1 (OpenDSS),
   with the finite-element linecodes of the trunk and lateral cables.
-- `data/zprim/` - primitive series-impedance matrices (JLD2) for the
-  NAYCWY 3×95 / NAYY cables in both finite-element (`fem`) and analytical
-  (`full_carson`, `simple_carson`, `deri`) formulations.
+- `data/zprim/` - primitive series-impedance and shunt-admittance matrices
+  (JLD2) for the NAYCWY 3×95 / NAYY cables in both finite-element (`fem`) and
+  analytical (`full_carson`, `simple_carson`, `deri`) formulations.
 - `data/kron_case/` - archived per-realisation objectives and pooled alarm
   counts of the paper's n = 30 Kron-reduction run (Table 1, case 1).
 

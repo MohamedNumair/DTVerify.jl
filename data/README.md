@@ -26,15 +26,29 @@ released as the IEEE European LV Test Feeder.
 
 ## `zprim/`
 
-Primitive series-impedance matrices (JLD2, Ω/km) for the cables under
-study, one file per (cable, formulation):
+Primitive matrices (JLD2) for the cables under study, one file per
+(cable, formulation): the series impedance `Z_primitive` (Ω/km) and, where
+present, the shunt admittance `Y_primitive` (S/m), with the conductors ordered
+as phases a, b, c, then the neutral.
 
 - Cables: `NAYCWY_3x95` (explicit concentric stranded neutral),
   `NAYY_3x95` (three-wire reduction), `NAYY_4x95`.
 - Formulations: `fem` (finite-element reference, ONELAB/Darwin),
   `full_carson`, `simple_carson` (analytical), `deri`.
 - `NAYY_4x95_rho_e_*` variants sweep the earth resistivity
-  (10, 30, 100, 300 Ωm).
+  (10, 30, 100, 300 Ωm); they carry the series impedance only.
+
+Shunt admittance:
+
+- `fem`: electrodynamic finite-element solution of the same geometry.
+- Analytical NAYCWY 3×95: Maxwell potential coefficients of the three sector
+  cores inside the grounded concentric neutral (each core as the equal-area
+  circle at its centroid, image method, PVC permittivity), plus the
+  neutral-to-earth capacitance through the PVC jacket. Core self capacitance
+  0.98 nF/m (FE: 0.72 nF/m).
+- Analytical NAYY designs: no analytical shunt (`Y_primitive` = 0). The FE
+  files carry it; at LV and power frequency it has no effect on the
+  verification verdict (shunt-omitted case of the paper).
 
 ## `kron_case/`
 
